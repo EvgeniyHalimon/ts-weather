@@ -1,2 +1,4 @@
-export const SET_QUERY = "SET_QUERY"
-export const SET_FORECAST = "SET_FORECAST"
+export enum ForecastActionType {
+    SET_QUERY = "SET_QUERY",
+    SET_FORECAST = "SET_FORECAST"
+}

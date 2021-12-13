@@ -1,21 +1,21 @@
-import { SET_FORECAST } from "../actions/action-types"
-import { SET_QUERY } from '../actions/action-types';
+import { ForecastActionType } from "../actions/action-types"
+import { Action, IForecast } from "../type"
 
-const initialState = {
+const initialState: IForecast = {
     query: '',
-    forecast: {}
+    forecast: null
 }
 
-const updateForecast = (state = initialState, action) => {
+const updateForecast = (state: IForecast = initialState, action: Action) => {
     switch (action.type){
-        case SET_QUERY :
+        case ForecastActionType.SET_QUERY :
             return{
-                ...state
+                ...state,
                 query: action.payload
             }
-        case SET_FORECAST:
+        case ForecastActionType.SET_FORECAST:
             return {
-                ...state
+                ...state,
                 forecast : action.payload
             }
         default:
