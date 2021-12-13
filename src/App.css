@@ -1,5 +1,10 @@
 *{
   font-family: 'Jost', sans-serif;
+  font-family: 'Permanent Marker', cursive;
+}
+
+body{
+  background-color: azure;
 }
 
 .App {
