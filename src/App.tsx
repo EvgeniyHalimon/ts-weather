@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { CityCard } from './components/CityCard/CityCard';
+import { ForecastPage } from './components/ForecastPage/ForecastPage';
 import { Navigation } from './components/Navigation/Navigation';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { Home } from './components/Home/Home';
@@ -14,7 +14,7 @@ function App() {
           <Navigation/>
             <Routes>
               <Route path='/' element={<Home/>}/>
-              <Route path='/weather-report' element={<CityCard/>}/>
+              <Route path='/weather-report' element={<ForecastPage/>}/>
             </Routes>
         </BrowserRouter>
       </Provider>

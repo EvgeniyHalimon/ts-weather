@@ -6,7 +6,7 @@ const initialState: IForecast = {
     forecast: null
 }
 
-const updateForecast = (state: IForecast = initialState, action: Action) => {
+const updateForecast = (state: IForecast = initialState, action: Action): IForecast => {
     switch (action.type){
         case ForecastActionType.SET_QUERY :
             return{

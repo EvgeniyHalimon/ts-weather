@@ -10,7 +10,7 @@ import '../Navigation/Navigation.css'
 
 export const Navigation : React.FC<{}>  = () => {
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box className='nav-container' sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar variant="dense">
                     <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>

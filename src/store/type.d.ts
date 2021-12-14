@@ -2,7 +2,7 @@ import { ForecastActionType } from "./actions/action-types"
 
 export type IForecast = {
     query: string,
-    forecast: object | null
+    forecast:  Object<string | number> | null
 }
 
 export interface QueryAction {
@@ -12,7 +12,7 @@ export interface QueryAction {
 
 export interface ForecastAction {
     type: ForecastActionType.SET_FORECAST,
-    payload: object | null
+    payload:  Object<string | number>
 }
 
 export type Action = QueryAction | ForecastAction

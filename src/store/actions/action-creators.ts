@@ -22,7 +22,6 @@ export const fetchForecast = (query: string) => {
     return async(dispatch: Dispatch) => {
         try{
             const forecastData = await axios.get(`${URL}?q=${query}&units=metric&appid=${KEY}`)
-            console.log(forecastData.data);
             dispatch(setForecast(forecastData.data))
         } catch(err){
             console.log(err);
