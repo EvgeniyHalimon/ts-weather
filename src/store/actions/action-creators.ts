@@ -1,7 +1,6 @@
 import axios from "axios"
 import { Dispatch } from "redux"
-import { KEY, URL } from "../../constants/constants"
-import { Action } from "../type"
+import { KEY, URL_CURRENT_DATE } from "../../constants/constants"
 import { ForecastActionType } from "./action-types"
 
 export const setQuery = (str: string) => {
@@ -28,11 +27,10 @@ export const setError = (bool: boolean) => {
 export const fetchForecast = (query: string) => {
     return async(dispatch: Dispatch) => {
         try{
-            const forecastData = await axios.get(`${URL}?q=${query}&units=metric&appid=${KEY}`)
+            const forecastData = await axios.get(`${URL_CURRENT_DATE}?q=${query}&units=metric&appid=${KEY}`)
             dispatch(setForecast(forecastData.data))
             dispatch(setError(false))
         } catch(err){
-            console.log(err);
             dispatch(setError(true))
         }
     }

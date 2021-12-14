@@ -23,7 +23,6 @@ export const ForecastForm : React.FC<{}> = () => {
         },
         validationSchema: validationSchema,
         onSubmit: async (values) => {
-            console.log(values.city)
             dispatch(setQuery(values.city))
             dispatch(fetchForecast(values.city))
         },

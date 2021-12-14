@@ -8,6 +8,18 @@ import StormTwoToneIcon from '@mui/icons-material/StormTwoTone';
 import { Link } from 'react-router-dom';
 import '../Navigation/Navigation.css'
 
+const dateBuilder = (d: Date) => {
+    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    let day = days[d.getDay()];
+    let date = d.getDate();
+    let month = months[d.getMonth()];
+    let year = d.getFullYear();
+
+    return `${day} ${date} ${month} ${year}`
+}
+
 export const Navigation : React.FC<{}>  = () => {
     return (
         <Box className='nav-container' sx={{ flexGrow: 1 }}>
@@ -23,7 +35,7 @@ export const Navigation : React.FC<{}>  = () => {
                             to='/weather-report'
                             className='nav-link'
                         >
-                            Weather report
+                            Weather report {dateBuilder(new Date())}
                         </Link>
                     </Typography>
                 </Toolbar>

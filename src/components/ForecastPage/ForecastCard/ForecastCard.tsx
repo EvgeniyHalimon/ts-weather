@@ -4,7 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Alert from '@mui/material/Alert';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import { Container, CardActionArea } from '@mui/material';
 import { useDispatch } from "react-redux";
 import { useTypesSelector } from '../../../hooks/useTypesSelector';
 import { setQuery, fetchForecast } from '../../../store/actions/action-creators';
@@ -13,12 +13,13 @@ import '../ForecastCard/ForecastCard.css'
 export const ForecastCard : React.FC<{}> = () => {
     const dispatch = useDispatch()
     const {query, forecast, error} = useTypesSelector(state => state.forecast)
-    console.log(forecast)
-    console.log(error);
 
     return (
         <>
-        {error ? <Alert className='alert' severity="error">Enter correct city name!</Alert> : 
+        {error ? 
+        <Container maxWidth="sm">
+            <Alert className='alert' severity="error">Enter correct city name!</Alert>
+        </Container> : 
         (forecast !== null) ? 
             <Card 
                 sx={{ maxWidth: 220 }} 
