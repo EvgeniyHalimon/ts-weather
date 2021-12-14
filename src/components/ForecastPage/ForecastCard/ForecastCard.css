@@ -1,7 +1,25 @@
+.alert{
+    max-width: 600px;
+    margin: 0 16px;
+}
+
 .card{
     margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.card-content{
+    margin: 0 auto;
+    text-align: left;
+}
+
+#city-name{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20px;
 }
 
 #icon{
-    width: 10%;
+    width: 100px;
+    margin: 0 auto;
 }

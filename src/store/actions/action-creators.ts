@@ -18,13 +18,22 @@ export const setForecast = (obj: object) => {
     }
 }
 
+export const setError = (bool: boolean) => {
+    return{
+        type: ForecastActionType.SET_ERROR,
+        payload: bool
+    }
+}
+
 export const fetchForecast = (query: string) => {
     return async(dispatch: Dispatch) => {
         try{
             const forecastData = await axios.get(`${URL}?q=${query}&units=metric&appid=${KEY}`)
             dispatch(setForecast(forecastData.data))
+            dispatch(setError(false))
         } catch(err){
             console.log(err);
+            dispatch(setError(true))
         }
     }
 }

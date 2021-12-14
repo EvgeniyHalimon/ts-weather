@@ -3,7 +3,8 @@ import { Action, IForecast } from "../type"
 
 const initialState: IForecast = {
     query: '',
-    forecast: null
+    forecast: null,
+    error: false
 }
 
 const updateForecast = (state: IForecast = initialState, action: Action): IForecast => {
@@ -18,6 +19,11 @@ const updateForecast = (state: IForecast = initialState, action: Action): IForec
                 ...state,
                 forecast : action.payload
             }
+        case ForecastActionType.SET_ERROR:
+        return {
+            ...state,
+            error : action.payload
+        }
         default:
             return state
     }
